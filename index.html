@@ -39,6 +39,7 @@
     }
     
     .container .card .wrapper-1 {
+        width: 200px;
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -46,9 +47,42 @@
 
     .container .card .input-wrapper {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         background-color: black;
-        padding: 1em;
+        padding: .8em;
+    }
+
+    .container .card .input-wrapper .indicator {
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container .card .input-wrapper .indicator > * {
+        width: 10px;
+        height: 10px;
+    }
+
+    .container .card .input-wrapper .indicator .red {
+        background-color: red;
+    }
+
+    .container .card .input-wrapper .indicator .green {
+        background-color: green;
+    }
+
+    .container .card .input-wrapper .indicator .blue {
+        background-color: blue;
+    }
+
+    .container .card .input-wrapper .input-range {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
     }
 
     .container .card .rgb-result {
@@ -80,9 +114,16 @@
         <div class="card">
             <div class="wrapper-1">
                 <div class="input-wrapper">
-                    <input type="range" min="0" max="255" value="255" id="r-picker">
-                    <input type="range" min="0" max="255" value="255" id="g-picker">
-                    <input type="range" min="0" max="255" value="255" id="b-picker">
+                    <div class="indicator">
+                        <span class="red"></span>
+                        <span class="green"></span>
+                        <span class="blue"></span>
+                    </div>
+                    <div class="input-range">
+                        <input type="range" min="0" max="255" value="255" id="r-picker">
+                        <input type="range" min="0" max="255" value="255" id="g-picker">
+                        <input type="range" min="0" max="255" value="255" id="b-picker">
+                    </div>
                 </div>
                     <p>RGB</p>
                 <div class="rgb-result">
