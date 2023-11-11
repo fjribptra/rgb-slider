@@ -24,8 +24,10 @@
         width: 100%;
         height: 100vh;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 2em;
-        background-color: purple;
     }
     
     .container .card {
@@ -90,6 +92,7 @@
         gap: 5px;
         padding: .2em;
         border: 2px solid black;
+        outline: 0;
     }
 
     .container .card .wrapper-2 .box{
@@ -97,6 +100,20 @@
         height: 150px;
         background-color: white;
         border: 2px solid black;
+    }
+
+    .container button{
+        width: 100px;
+        padding: 1em;
+        cursor: pointer;
+        transition: .3s all;
+        background-color: blue;
+        color: white;
+        border: 0;
+    }
+
+    .container button:hover{
+        transform: scale(105%)
     }
 
     @media screen and (max-width: 460px){
@@ -126,16 +143,13 @@
                     </div>
                 </div>
                     <p>RGB</p>
-                <div class="rgb-result">
-                    <p id="r-result">255,</p>
-                    <p id="g-result">255,</p>
-                    <p id="b-result">255</p>
-                </div>
+                    <input class="rgb-result" type="text" value="255, 255, 255">
             </div>
             <div class="wrapper-2">
                 <div class="box"></div>
             </div>
         </div>
+        <button id="copyButton">Copy</button>
     </div>
 
     <script src="script.js"></script>

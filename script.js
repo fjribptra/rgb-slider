@@ -8,6 +8,8 @@ const bResult = document.getElementById('b-result')
 
 const box = document.querySelector('.box')
 const container = document.querySelector('.container')
+const copyButton = document.getElementById('copyButton')
+const rgbResult = document.querySelector('.rgb-result')
 
 let r = 255
 let g = 255
@@ -15,21 +17,23 @@ let b = 255
 
 rPicker.addEventListener('input', function() {
     r = rPicker.value
-    console.log(`${r}, ${g}, ${b}`)
+    rgbResult.value = `${r}, ${g}, ${b}`
     box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-    rResult.textContent = `${r},`
 })
 
 gPicker.addEventListener('input', function() {
     g = gPicker.value
-    console.log(`${r}, ${g}, ${b}`)
+    rgbResult.value = `${r}, ${g}, ${b}`
     box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-    gResult.textContent = `${g},`
 })
 
 bPicker.addEventListener('input', function() {
     b = bPicker.value
-    console.log(`${r}, ${g}, ${b}`)
+    rgbResult.value = `${r}, ${g}, ${b}`
     box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-    bResult.textContent = b
+})
+
+copyButton.addEventListener('click', function() {
+    rgbResult.select()
+    document.execCommand('copy')
 })
